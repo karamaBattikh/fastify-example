@@ -4,7 +4,12 @@
     "es6": true,
     "node": true
   },
-  "extends": ["prettier", "airbnb-base"],
+  "extends": [
+    "prettier",
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
   "plugins": ["prettier"],
   "parserOptions": {
     "ecmaVersion": 12
