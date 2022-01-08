@@ -1,0 +1,24 @@
+{
+  "name": "fastify-example",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/karamaBattikh/fastify-example.git",
+  "author": "<battikh.karama@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "fastify": "^3.25.3"
+  }
+}
