@@ -1,16 +1,38 @@
 import fastify from 'fastify';
+import fastifyEnv from 'fastify-env';
+
+import blogRoutes from '@routes/blogs';
 
 const server = fastify({ logger: true });
 
-server.get('/', async (request, reply) => {
-  return { hello: 'world' };
+const options = {
+  confKey: 'config', // optional, default: 'config'
+  schema: {
+    properties: {
+      PORT: {
+        default: 3000,
+        type: 'string',
+      },
+    },
+    required: ['PORT'],
+    type: 'object',
+  },
+};
+
+server.register(fastifyEnv, options).ready((err) => {
+  if (err) console.error(err);
 });
 
-const start = async () => {
-  try {
-    await server.listen(3000);
-  } catch (err) {
-    console.log(err);
+server.get('/', async () => ({ hello: 'world' }));
+
+blogRoutes.forEach((route) => {
+  server.route(route);
+});
+
+server.listen(server.config?.PORT, (err, address) => {
+  if (err) {
+    server.log.error(err);
+    process.exit(1);
   }
-};
-start();
+  server.log.info(`server listening on ${address}`);
+});

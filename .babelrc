@@ -5,7 +5,11 @@
       "module-resolver",
       {
         "alias": {
-          "@icons": "./src/components/icons"
+          "@utils": "./src/utils",
+          "@config": "./src/config",
+          "@controllers": "./src/controllers",
+          "@mockData": "./src/mockData",
+          "@routes": "./src/routes"
         }
       }
     ]

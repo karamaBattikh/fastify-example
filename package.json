@@ -6,7 +6,8 @@
   "author": "<battikh.karama@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/server.js",
+    "lint": "eslint --fix --ignore-path .gitignore \"./**/*.js\""
   },
   "devDependencies": {
     "@babel/cli": "^7.16.7",
@@ -14,14 +15,20 @@
     "@babel/node": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-sonarjs": "^0.11.0",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   },
   "dependencies": {
-    "fastify": "^3.25.3"
+    "fastify": "^3.25.3",
+    "fastify-env": "^2.1.1"
   }
 }
